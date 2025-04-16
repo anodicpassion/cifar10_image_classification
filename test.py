@@ -5,8 +5,8 @@ import cv2
 import numpy as np
 from utils.config import *
 
-# CIFAR-10 class names
-class_names = ['airplane','automobile','bird','cat','deer','dog','frog','horse','ship','truck']
+class_names = ['airplane','automobile','bird','cat','deer',
+               'dog','frog','horse','ship','truck']
 
 def load_and_preprocess_image(img_path):
     img = cv2.imread(img_path)
@@ -16,7 +16,7 @@ def load_and_preprocess_image(img_path):
     return img
 
 model = tf.keras.models.load_model(MODEL_PATH)
-img = load_and_preprocess_image("sample_image.jpg")  # Replace with your image path
+img = load_and_preprocess_image("data/cifar-10/test/434.png")  # Update this path
 prediction = model.predict(img)
 predicted_class = class_names[np.argmax(prediction)]
 
