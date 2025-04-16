@@ -2,6 +2,7 @@
 
 This project implements a high-accuracy image classifier for the [CIFAR-10 dataset](https://www.cs.toronto.edu/~kriz/cifar.html), using **TensorFlow** and **OpenCV**. It trains a Convolutional Neural Network (CNN) to recognize 10 object categories from tiny 32x32 color images.
 
+![cifar-10](https://github.com/user-attachments/assets/c87c48a9-87fb-4522-aa70-e0ee08bc5f0e)
 
 ---
 
@@ -27,6 +28,21 @@ The dataset contains **60,000 color images** across **10 classes**, split into 5
 ├── LICENSE
 ├── README.md
 ├── data
+│   ├── cifar-10
+│   │   ├── sampleSubmission.csv
+│   │   ├── test
+│   │   │   ├── 1.png
+│   │   │   ├── 10.png      
+│   │   │   ├── ...
+│   │   │   └── 99999.png
+│   │   ├── test.7z
+│   │   ├── train
+│   │   │   ├── 1.png
+│   │   │   ├── 10.png
+│   │   │   ├── ...
+│   │   │   └── 9999.png
+│   │   ├── train.7z
+│   │   └── trainLabels.csv
 │   ├── README.md
 │   └── file_structure
 ├── evaluate.py
