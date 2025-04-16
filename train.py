@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from tensorflow.keras.optimizers import Adam
-from utils.preprocessing import load_data
+from utils.preprocessing import load_dataset
 from utils.config import *
 
 def build_model():
@@ -20,11 +20,13 @@ def build_model():
     ])
     return model
 
-x_train, y_train, x_test, y_test = load_data()
+x_train, x_val, y_train, y_val = load_dataset()
 model = build_model()
 model.compile(optimizer=Adam(learning_rate=LEARNING_RATE),
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(x_train, y_train, validation_split=0.2, epochs=EPOCHS, batch_size=BATCH_SIZE)
+model.fit(x_train, y_train, validation_data=(x_val, y_val),
+          epochs=EPOCHS, batch_size=BATCH_SIZE)
+
 model.save(MODEL_PATH)
