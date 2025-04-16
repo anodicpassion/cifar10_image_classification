@@ -1,0 +1,21 @@
+data/cifar-10
+├── sampleSubmission.csv
+├── test
+│   ├── 1.png
+│   ├── 10.png
+│   ├── 100.png
+│   ├── 1000.png
+│   ├── ...
+│   └── 99999.png
+├── test.7z
+├── train
+│   ├── 1.png
+│   ├── 10.png
+│   ├── 100.png
+│   ├── 1000.png
+│   ├── ...
+│   └── 9999.png
+├── train.7z
+└── trainLabels.csv
+
+3 directories, 350004 files
